@@ -1,6 +1,9 @@
 import { Accordion } from "@patternfly/elements/react/pf-accordion/pf-accordion.js"
 import { AccordionHeader } from "@patternfly/elements/react/pf-accordion/pf-accordion-header.js"
 import { AccordionPanel } from "@patternfly/elements/react/pf-accordion/pf-accordion-panel.js"
+import { PfIcon } from "@patternfly/elements/pf-icon/pf-icon.js"
+
+PfIcon.getIconUrl = (set, icon) => `@patternfly/icons/${set}/${icon}.js`;
 
 function App() {
   return (
