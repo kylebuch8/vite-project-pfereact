@@ -4,13 +4,25 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PatternFly Elements with React wrappers" />
     <title>Vite + React + TS</title>
+    <link rel="stylesheet" href="/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="https://ux.redhat.com/assets/rhds.min.css">
+    <link rel="stylesheet" href="https://ux.redhat.com/assets/redhat/redhat-font/2/webfonts/red-hat-font.css">
     <script type="importmap">
       {
         "imports": {
-          "@patternfly/icons/": "https://jspm.dev/@patternfly/icons/"
+          "@patternfly/icons/": "https://jspm.dev/npm:@patternfly/icons@1.0.2/"
         }
       }
+    </script>
+    <script type="module">
+      const eventHandler = event => {
+        console.log(event);
+      };
+
+      document.addEventListener('expand', eventHandler);
+      document.addEventListener('collapse', eventHandler);
     </script>
   </head>
   <body>
