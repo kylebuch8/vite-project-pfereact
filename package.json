@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cpelements/elements": "^2.0.0-alpha.16",
     "@lit-labs/react": "^2.1.0",
     "@patternfly/elements": "^2.4.0",
     "@patternfly/react-core": "^5.1.1",

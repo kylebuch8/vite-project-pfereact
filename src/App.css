@@ -1,3 +1,18 @@
 thead th {
   text-align: left;
 }
+
+cp-404 {
+  margin-bottom: 4rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 31.25rem;
+}
+
+.pf-v5-c-table__td {
+  white-space: nowrap !important;
+}

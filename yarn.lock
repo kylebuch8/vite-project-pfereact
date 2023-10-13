@@ -221,6 +221,17 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
+"@cpelements/elements@^2.0.0-alpha.16":
+  version "2.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/@cpelements/elements/-/elements-2.0.0-alpha.16.tgz#16b946e9db30d05ca5060fec4d10a3be2b802da5"
+  integrity sha512-X5CIUEp4IoPdO3lNAn1L3PBz+0a/F7L+5pLNO+Wzs8qKBOjvZg1kft86OUOLTktsNcQ49ORB6jyxy9OIEvQjdw==
+  dependencies:
+    "@patternfly/elements" "^2.2.0"
+    "@rhds/elements" "^1.0.0"
+    "@rhds/tokens" "^1.0.0"
+    lit "^2.7.3"
+    tslib "^2.5.0"
+
 "@csstools/css-parser-algorithms@^2.3.1":
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@csstools/css-parser-algorithms/-/css-parser-algorithms-2.3.2.tgz#1e0d581dbf4518cb3e939c3b863cb7180c8cedad"
@@ -492,7 +503,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@patternfly/elements@^2.4.0":
+"@patternfly/elements@^2.2.0", "@patternfly/elements@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@patternfly/elements/-/elements-2.4.0.tgz#b12924d3363d25bf4ab6d9dd37eda6743f6a3b01"
   integrity sha512-mA6I76R8aHdBKRX+IbaVuD24OnYUBsjStDwGVq7ytopA0XUKx12xTwgRZGNM7wKBBFYbNKpIxxuaanQSLZTGIQ==
@@ -554,7 +565,7 @@
   resolved "https://registry.yarnpkg.com/@patternfly/react-tokens/-/react-tokens-5.1.1.tgz#098b70b4ed4d05217004395abc7395a46acc9abe"
   integrity sha512-cHuNkzNA9IY9aDwfjSEkitQoVEvRhOJRKhH0yIRlRByEkbdoV9jJZ9xj20hNShE+bxmNuom+MCTQSkpkN1bV8A==
 
-"@rhds/elements@^1.1.1":
+"@rhds/elements@^1.0.0", "@rhds/elements@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@rhds/elements/-/elements-1.1.1.tgz#23f7028039433d7f332fdb8b0bc05c3ef2bed6be"
   integrity sha512-gjW4AGugwLK35TuUiU0PY8LMmGugLMRyfnvd7QA8Oa2GR9dFMuDzF8CnxaD8/ZjUK3/CyztOosOUdnn6XGnTTw==
@@ -565,7 +576,7 @@
     lit "^2.7.3"
     tslib "^2.5.0"
 
-"@rhds/tokens@^1.1.2":
+"@rhds/tokens@^1.0.0", "@rhds/tokens@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@rhds/tokens/-/tokens-1.1.2.tgz#c488e41a8b642a5328e4d6caabea4171201c6580"
   integrity sha512-A0FBEdXmf1BbeYJ+Cig5ZLHAkiZi/ZM9RJmwzOPzl15ScDYVQRPrPkJgylPinF/36cuGJ29YfA4hIAfgh9gDtg==

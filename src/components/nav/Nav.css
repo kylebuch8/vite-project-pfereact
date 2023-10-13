@@ -1,0 +1,4 @@
+nav {
+  background-color: var(--pfe-navigation__nav-bar--Background,#151515);
+  padding: 10px 32px;
+}
