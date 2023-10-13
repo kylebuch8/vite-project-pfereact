@@ -21,6 +21,8 @@ different components can deliver an entire experience.
 - rh-alert
 - rh-card
 - rh-badge
+- rh-footer
+- rh-cta
 
 ### Customer Portal Elements
 
