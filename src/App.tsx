@@ -74,6 +74,7 @@ function App() {
         
         if (!res.ok) {
           switch(res.status) {
+            case 403:
             case 404:
               setError(true);
               break;
@@ -91,8 +92,8 @@ function App() {
           revision_timestamp: data.revision_timestamp,
           affectedPackages: data.field_cve_releases_txt.und[0].object,
           description: data.field_cve_details_text.und[0].safe_value,
-          statement: data.field_cve_statement_text.und[0].safe_value,
-          mitigation: data.field_cve_mitigation_text.und[0].safe_value,
+          statement: data.field_cve_statement_text && data.field_cve_statement_text.und && data.field_cve_statement_text.und[0].safe_value || '',
+          mitigation: data.field_cve_mitigation_text && data.field_cve_mitigation_text.und && data.field_cve_mitigation_text.und[0].safe_value || '',
           faqs: data.field_cve_faq_txt.und[0].object,
         }
         
@@ -145,10 +146,18 @@ function App() {
               <div className="col-md-7">
                 <h2>Description</h2>
                 <p dangerouslySetInnerHTML={{ __html: cveData.description }} />
-                <h2>Statement</h2>
-                <div dangerouslySetInnerHTML={{ __html: cveData.statement }}></div>
-                <h2>Mitigation</h2>
-                <div dangerouslySetInnerHTML={{ __html: cveData.mitigation }} />
+                {cveData.statement && (
+                  <>
+                    <h2>Statement</h2>
+                    <div dangerouslySetInnerHTML={{ __html: cveData.statement }}></div>
+                  </>
+                )}
+                {cveData.mitigation && (
+                  <>
+                    <h2>Mitigation</h2>
+                    <div dangerouslySetInnerHTML={{ __html: cveData.mitigation }} />
+                  </>
+                )}
               </div>
               <div className="col-md-4 offset-md-1">
                 <div>
