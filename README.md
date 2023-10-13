@@ -44,6 +44,14 @@ The API call needs to be executed from a *.redhat.com domain.
 
 If everything is set up correctly, you should be able to visit `http://prod.foo.redhat.com:5173` to see the application running.
 
+## Viewing a CVE to actually see something
+You'll need to add a query string parameter to see a CVE.
+```
+?cve=CVE-2023-3777
+```
+
+If you want to try other CVEs out, you can copy and paste CVEs from the Customer Portal at [https://access.redhat.com/security/security-updates/cve](https://access.redhat.com/security/security-updates/cve).
+
 ## Creating a build and previewing it
 
 ```
