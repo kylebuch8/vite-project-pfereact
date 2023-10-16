@@ -1,10 +1,11 @@
 import { useState, Fragment, useEffect } from "react"
 import { Accordion } from "@patternfly/elements/react/pf-accordion/pf-accordion.js"
 import { AccordionHeader } from "@patternfly/elements/react/pf-accordion/pf-accordion-header.js"
-import { AccordionPanel } from "@patternfly/elements/react/pf-accordion/pf-accordion-panel.js"
+import { Card } from "@patternfly/elements/react/pf-card/pf-card.js"
 import { Popover } from "@patternfly/elements/react/pf-popover/pf-popover.js"
 import { Button } from "@patternfly/elements/react/pf-button/pf-button.js"
 import { PfIcon } from "@patternfly/elements/pf-icon/pf-icon.js"
+import { AccordionPanel } from "@patternfly/elements/react/pf-accordion/pf-accordion-panel.js"
 import { Timestamp } from "@patternfly/elements/react/pf-timestamp/pf-timestamp.js"
 import { Spinner } from "@patternfly/elements/react/pf-spinner/pf-spinner.js"
 import { Table, Thead, Tbody, Th, Tr, Td } from "@patternfly/react-table"
@@ -17,6 +18,7 @@ import "./App.css"
 
 import Nav from "./components/nav/Nav"
 import Footer from "./components/footer/Footer"
+import { Icon } from "@patternfly/elements/react/pf-icon/pf-icon.js"
 
 PfIcon.getIconUrl = (set, icon) => `@patternfly/icons/${set}/${icon}.js`;
 
@@ -27,6 +29,7 @@ type CveData = {
   description: string
   statement: string
   mitigation: string
+  impact: string
   affectedPackages: Array<{
     product: string
     package: string
@@ -95,6 +98,7 @@ function App() {
           statement: data.field_cve_statement_text && data.field_cve_statement_text.und && data.field_cve_statement_text.und[0].safe_value || '',
           mitigation: data.field_cve_mitigation_text && data.field_cve_mitigation_text.und && data.field_cve_mitigation_text.und[0].safe_value || '',
           faqs: data.field_cve_faq_txt.und[0].object,
+          impact: data.field_cve_threat_severity_text.und[0].value,
         }
         
         setCveData(_cveData);
@@ -137,6 +141,34 @@ function App() {
                 Public on <Timestamp dateFormat="full" date={ new Date(cveData.created * 1000).toString() } /><br />
                 Last modified: <Timestamp dateFormat="full" timeFormat="short" date={ new Date(cveData.revision_timestamp * 1000).toString() } utc />
               </p>
+            </div>
+            <div className="row">
+              <div className="col-md-4">
+                <Card>
+                  <div className="d-flex stat-card">
+                    <div className={ `d-flex flex-column justify-content-center align-items-center ${cveData.impact}` }>
+                      <div><Icon icon="shield-alt" size="xl" /></div>
+                      <div>{ cveData.impact }</div>
+                    </div>
+                    <div className="d-flex flex-column justify-content-center">
+                      <div>{ cveData.impact } Impact</div>
+                      <div>
+                        <a href="https://access.redhat.com/security/updates/classification/">What does this mean?</a>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+              <div className="col-md-4">
+                <Card>
+                  <div className="d-flex stat-card">
+                    <div className="d-flex justify-content-center align-items-center stat-number">6.5</div>
+                    <div>
+                      CVSS Score breakdown
+                    </div>
+                  </div>
+                </Card>
+              </div>
             </div>
           </div>
         </section>

@@ -16,3 +16,17 @@ cp-404 {
 .pf-v5-c-table__td {
   white-space: nowrap !important;
 }
+
+.stat-card > div { 
+  padding: 1rem;
+}
+
+.stat-number {
+  font-size: 2rem;
+  background-color: #37424a;
+  color: white;
+}
+
+.Moderate {
+  background-color: #f5c12e;
+}
